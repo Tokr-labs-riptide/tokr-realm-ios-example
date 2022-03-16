@@ -19,6 +19,7 @@ class ContentViewModel: ObservableObject {
     
     @Published var isLoggingIn = false
     @Published var isLoggedIn = false
+    @Published var isLoading = false
     @Published var privateKey: String?
     @Published var shouldShowErrorMessage = false
     @Published var errorMessage = ""
@@ -28,7 +29,7 @@ class ContentViewModel: ObservableObject {
     // MARK: Public Methods
     
     func login() {
-
+        
         isLoggingIn = true
         
         guard let privateKey = Bundle.main.object(forInfoDictionaryKey: "SOLANA_PRIVATE_KEY") as? String else {
@@ -59,7 +60,7 @@ class ContentViewModel: ObservableObject {
                 self.getRnfts()
                 
             }
-      
+        
     }
     
     func logout() {
@@ -84,15 +85,25 @@ class ContentViewModel: ObservableObject {
     
     private func getRnfts() {
         
-        tokrNftService.fetchRnfts { result in
-            switch result {
-                case .success(let rnfts):
-                    self.rnfts = rnfts
-                case .failure(let error):
+        isLoading = true
+        
+        tokrNftService.fetchRnfts()
+            .receive(on: DispatchQueue.main)
+            .sink {
+                
+                self.isLoading = false
+                
+                if case let .failure(error) = $0 {
+                    self.isLoading = false
                     self.shouldShowErrorMessage = true
                     self.errorMessage = "Fetching rnfts failed with error \(error.localizedDescription)"
+                    return
+                }
+                
+            } receiveValue: { rnfts in
+                self.rnfts = rnfts
             }
-        }
+            .store(in: &cancellables)
         
     }
     

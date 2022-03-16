@@ -21,7 +21,8 @@
 		5096701927E248B700DEF9EF /* Rnft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701827E248B700DEF9EF /* Rnft.swift */; };
 		5096701B27E2587500DEF9EF /* CaseIterableDefaultsLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */; };
 		5096702127E25D8F00DEF9EF /* RnftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702027E25D8F00DEF9EF /* RnftView.swift */; };
-		5096702327E25D9C00DEF9EF /* RnftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702227E25D9C00DEF9EF /* RnftViewModel.swift */; };
+		5096702527E282FA00DEF9EF /* RnftAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702427E282FA00DEF9EF /* RnftAttribute.swift */; };
+		5096702827E2906200DEF9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702727E28FE800DEF9EF /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +39,8 @@
 		5096701827E248B700DEF9EF /* Rnft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rnft.swift; sourceTree = "<group>"; };
 		5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterableDefaultsLast.swift; sourceTree = "<group>"; };
 		5096702027E25D8F00DEF9EF /* RnftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftView.swift; sourceTree = "<group>"; };
-		5096702227E25D9C00DEF9EF /* RnftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftViewModel.swift; sourceTree = "<group>"; };
+		5096702427E282FA00DEF9EF /* RnftAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftAttribute.swift; sourceTree = "<group>"; };
+		5096702727E28FE800DEF9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				5093BFF027E22FCE009903CE /* RNFTDemoApp.swift */,
+				5096702627E28FDE00DEF9EF /* Configuration */,
 				5096701427E247B100DEF9EF /* Models */,
 				5096701527E2482D00DEF9EF /* Services */,
 				5096701327E247AA00DEF9EF /* Views */,
@@ -132,6 +135,7 @@
 				5096700D27E245BC00DEF9EF /* SessionStore.swift */,
 				5096701827E248B700DEF9EF /* Rnft.swift */,
 				5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */,
+				5096702427E282FA00DEF9EF /* RnftAttribute.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +151,7 @@
 		5096701C27E25D5100DEF9EF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5096702027E25D8F00DEF9EF /* RnftView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -155,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				5096701E27E25D6A00DEF9EF /* Content */,
-				5096701F27E25D7400DEF9EF /* Rnft */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -169,13 +173,12 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
-		5096701F27E25D7400DEF9EF /* Rnft */ = {
+		5096702627E28FDE00DEF9EF /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				5096702027E25D8F00DEF9EF /* RnftView.swift */,
-				5096702227E25D9C00DEF9EF /* RnftViewModel.swift */,
+				5096702727E28FE800DEF9EF /* AppDelegate.swift */,
 			);
-			path = Rnft;
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,15 +260,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5096702827E2906200DEF9EF /* AppDelegate.swift in Sources */,
 				5096701927E248B700DEF9EF /* Rnft.swift in Sources */,
 				5093BFF327E22FCE009903CE /* ContentView.swift in Sources */,
 				5093BFF127E22FCE009903CE /* RNFTDemoApp.swift in Sources */,
 				5096701727E2484E00DEF9EF /* TokrNftService.swift in Sources */,
 				5096700B27E243B700DEF9EF /* ContentViewModel.swift in Sources */,
 				5096700E27E245BC00DEF9EF /* SessionStore.swift in Sources */,
+				5096702527E282FA00DEF9EF /* RnftAttribute.swift in Sources */,
 				5096701B27E2587500DEF9EF /* CaseIterableDefaultsLast.swift in Sources */,
 				5096700F27E245BC00DEF9EF /* InMemoryAccountStorage.swift in Sources */,
-				5096702327E25D9C00DEF9EF /* RnftViewModel.swift in Sources */,
 				5096702127E25D8F00DEF9EF /* RnftView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +488,7 @@
 		};
 		5093C00427E23736009903CE /* XCRemoteSwiftPackageReference "Metaplex" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NathanLawrence/Metaplex.Swift";
+			repositoryURL = "https://github.com/TOKR-labs/Metaplex.Swift";
 			requirement = {
 				branch = main;
 				kind = branch;

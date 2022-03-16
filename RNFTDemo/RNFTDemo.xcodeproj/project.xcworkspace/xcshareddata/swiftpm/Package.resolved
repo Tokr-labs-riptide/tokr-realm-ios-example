@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "Metaplex",
-        "repositoryURL": "https://github.com/NathanLawrence/Metaplex.Swift",
+        "repositoryURL": "https://github.com/TOKR-labs/Metaplex.Swift",
         "state": {
           "branch": "main",
-          "revision": "1704d1cf625eb1a1a816476f99eecdb5b5a14ca8",
+          "revision": "69a0e989efba6ccbb934d0eea64e2f0b2889e206",
           "version": null
         }
       },

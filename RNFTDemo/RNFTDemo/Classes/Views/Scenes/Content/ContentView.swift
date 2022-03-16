@@ -12,22 +12,24 @@ struct ContentView: View {
     @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
+            
         
-        NavigationView {
-            
             content()
-                .padding()
-                .alert(
-                    viewModel.errorMessage,
-                    isPresented: $viewModel.shouldShowErrorMessage
-                ) {
-                    Button("OK") {
-                        // Handle acknowledgement
-                    }
-                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(
+                    Color("Background")
+                )
                 .navigationBarTitleDisplayMode(.inline)
-            
-        }
+            .alert(
+                viewModel.errorMessage,
+                isPresented: $viewModel.shouldShowErrorMessage
+            ) {
+                
+                Button("OK") {
+                    // Handle acknowledgement
+                }
+                
+            }
         
     }
     
@@ -49,6 +51,7 @@ struct ContentView: View {
             
             ProgressView()
                 .progressViewStyle(.circular)
+                .tint(Color("Foreground"))
             
         } else {
             
@@ -57,44 +60,50 @@ struct ContentView: View {
             } label: {
                 Text("Login")
             }
+            .frame(width: 150, height: 44)
+            .cornerRadius(5)
+            .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(Color("Foreground"))
+            )
             
         }
         
     }
     
     private func loggedInContent() -> some View {
-       
-        List(viewModel.rnfts) { rnft in
-            NavigationLink {
-                RnftView(rnft: rnft)
-            } label: {
-                Text(rnft.name)
+        
+        VStack {
+            
+            if viewModel.isLoading {
+                
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(Color("Foreground"))
+                
+            } else {
+                
+                ScrollView {
+                    
+                    VStack(spacing: 16) {
+                        ForEach(viewModel.rnfts) {
+                            RnftView(rnft: $0)
+                        }
+                    }
+                    .padding(.top, 24)
+                    .padding(.horizontal)
+                    .padding(.bottom, 32)
+                    
+                }
+                
             }
+            
         }
-        .edgesIgnoringSafeArea(.all)
         .frame(width: UIScreen.main.bounds.width)
         .listStyle(.plain)
-        .toolbar {
-            
-            ToolbarItem(
-                id: "logout",
-                placement: .bottomBar,
-                showsByDefault: true
-            ) {
-                
-                Button {
-                    viewModel.logout()
-                } label: {
-                    Text("Logout")
-                }
-                .tint(.red)
-                
-            }
-            
-        }
         
     }
-    
     
 }
 
