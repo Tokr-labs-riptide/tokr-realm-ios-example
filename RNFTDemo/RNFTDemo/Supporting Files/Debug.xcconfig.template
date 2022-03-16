@@ -1,0 +1,11 @@
+//
+//  Debug.xcconfig
+//  RNFTDemo
+//
+//  Created by Eric McGary on 3/16/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+"SOLANA_PRIVATE_KEY" = "YOUR_SOLANA_PRIVATE_KEY"
