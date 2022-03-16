@@ -14,6 +14,14 @@
 		5093C00027E22FF4009903CE /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 5093BFFF27E22FF4009903CE /* Solana */; };
 		5093C00627E23736009903CE /* Metaplex in Frameworks */ = {isa = PBXBuildFile; productRef = 5093C00527E23736009903CE /* Metaplex */; };
 		5096700627E242AE00DEF9EF /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5096700527E242AE00DEF9EF /* Debug.xcconfig */; };
+		5096700B27E243B700DEF9EF /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096700A27E243B700DEF9EF /* ContentViewModel.swift */; };
+		5096700E27E245BC00DEF9EF /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096700D27E245BC00DEF9EF /* SessionStore.swift */; };
+		5096700F27E245BC00DEF9EF /* InMemoryAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096700C27E245BC00DEF9EF /* InMemoryAccountStorage.swift */; };
+		5096701727E2484E00DEF9EF /* TokrNftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701627E2484E00DEF9EF /* TokrNftService.swift */; };
+		5096701927E248B700DEF9EF /* Rnft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701827E248B700DEF9EF /* Rnft.swift */; };
+		5096701B27E2587500DEF9EF /* CaseIterableDefaultsLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */; };
+		5096702127E25D8F00DEF9EF /* RnftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702027E25D8F00DEF9EF /* RnftView.swift */; };
+		5096702327E25D9C00DEF9EF /* RnftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702227E25D9C00DEF9EF /* RnftViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +31,14 @@
 		5093BFF427E22FCF009903CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5093BFF727E22FCF009903CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5096700527E242AE00DEF9EF /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		5096700A27E243B700DEF9EF /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		5096700C27E245BC00DEF9EF /* InMemoryAccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAccountStorage.swift; sourceTree = "<group>"; };
+		5096700D27E245BC00DEF9EF /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		5096701627E2484E00DEF9EF /* TokrNftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokrNftService.swift; sourceTree = "<group>"; };
+		5096701827E248B700DEF9EF /* Rnft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rnft.swift; sourceTree = "<group>"; };
+		5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterableDefaultsLast.swift; sourceTree = "<group>"; };
+		5096702027E25D8F00DEF9EF /* RnftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftView.swift; sourceTree = "<group>"; };
+		5096702227E25D9C00DEF9EF /* RnftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				5093BFF027E22FCE009903CE /* RNFTDemoApp.swift */,
-				5093BFF227E22FCE009903CE /* ContentView.swift */,
+				5096701427E247B100DEF9EF /* Models */,
+				5096701527E2482D00DEF9EF /* Services */,
+				5096701327E247AA00DEF9EF /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -96,6 +114,68 @@
 				5093BFF627E22FCF009903CE /* Preview Content */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		5096701327E247AA00DEF9EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5096701C27E25D5100DEF9EF /* Components */,
+				5096701D27E25D5900DEF9EF /* Scenes */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5096701427E247B100DEF9EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5096700C27E245BC00DEF9EF /* InMemoryAccountStorage.swift */,
+				5096700D27E245BC00DEF9EF /* SessionStore.swift */,
+				5096701827E248B700DEF9EF /* Rnft.swift */,
+				5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5096701527E2482D00DEF9EF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5096701627E2484E00DEF9EF /* TokrNftService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5096701C27E25D5100DEF9EF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5096701D27E25D5900DEF9EF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5096701E27E25D6A00DEF9EF /* Content */,
+				5096701F27E25D7400DEF9EF /* Rnft */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5096701E27E25D6A00DEF9EF /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				5093BFF227E22FCE009903CE /* ContentView.swift */,
+				5096700A27E243B700DEF9EF /* ContentViewModel.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		5096701F27E25D7400DEF9EF /* Rnft */ = {
+			isa = PBXGroup;
+			children = (
+				5096702027E25D8F00DEF9EF /* RnftView.swift */,
+				5096702227E25D9C00DEF9EF /* RnftViewModel.swift */,
+			);
+			path = Rnft;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,8 +257,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5096701927E248B700DEF9EF /* Rnft.swift in Sources */,
 				5093BFF327E22FCE009903CE /* ContentView.swift in Sources */,
 				5093BFF127E22FCE009903CE /* RNFTDemoApp.swift in Sources */,
+				5096701727E2484E00DEF9EF /* TokrNftService.swift in Sources */,
+				5096700B27E243B700DEF9EF /* ContentViewModel.swift in Sources */,
+				5096700E27E245BC00DEF9EF /* SessionStore.swift in Sources */,
+				5096701B27E2587500DEF9EF /* CaseIterableDefaultsLast.swift in Sources */,
+				5096700F27E245BC00DEF9EF /* InMemoryAccountStorage.swift in Sources */,
+				5096702327E25D9C00DEF9EF /* RnftViewModel.swift in Sources */,
+				5096702127E25D8F00DEF9EF /* RnftView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +275,7 @@
 /* Begin XCBuildConfiguration section */
 		5093BFF927E22FCF009903CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5096700527E242AE00DEF9EF /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -308,7 +397,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RNFTDemo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RNFTDemo/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = V8CHF5249T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -323,11 +412,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tokr.RNFTDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhove.RNFTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -338,7 +427,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RNFTDemo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RNFTDemo/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = V8CHF5249T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -353,11 +442,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tokr.RNFTDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhove.RNFTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -371,7 +460,7 @@
 				5093BFFA27E22FCF009903CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5093BFFB27E22FCF009903CE /* Build configuration list for PBXNativeTarget "RNFTDemo" */ = {
 			isa = XCConfigurationList;
@@ -380,7 +469,7 @@
 				5093BFFD27E22FCF009903CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
