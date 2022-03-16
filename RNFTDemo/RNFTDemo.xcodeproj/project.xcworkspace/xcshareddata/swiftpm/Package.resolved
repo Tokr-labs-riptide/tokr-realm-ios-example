@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Metaplex",
+        "repositoryURL": "https://github.com/TOKR-labs/Metaplex.Swift",
+        "state": {
+          "branch": "main",
+          "revision": "2c9d941248d716d42bc61c8a4011f5bad1623337",
+          "version": null
+        }
+      },
+      {
+        "package": "secp256k1",
+        "repositoryURL": "https://github.com/Boilertalk/secp256k1.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "45e458ec3be46cf0a6eb68bc947f797852dc65d8",
+          "version": "0.1.6"
+        }
+      },
+      {
+        "package": "Solana",
+        "repositoryURL": "https://github.com/ajamaica/Solana.Swift",
+        "state": {
+          "branch": "master",
+          "revision": "d9f6bc2e9878f476b3bc06685cadc8cc14e578e4",
+          "version": null
+        }
+      },
+      {
+        "package": "Starscream",
+        "repositoryURL": "https://github.com/daltoniam/Starscream.git",
+        "state": {
+          "branch": null,
+          "revision": "df8d82047f6654d8e4b655d1b1525c64e1059d21",
+          "version": "4.0.4"
+        }
+      },
+      {
+        "package": "TweetNacl",
+        "repositoryURL": "https://github.com/bitmark-inc/tweetnacl-swiftwrap.git",
+        "state": {
+          "branch": null,
+          "revision": "f8fd111642bf2336b11ef9ea828510693106e954",
+          "version": "1.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
