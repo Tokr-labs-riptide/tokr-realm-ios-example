@@ -13,6 +13,7 @@
 		5093BFF827E22FCF009903CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093BFF727E22FCF009903CE /* Preview Assets.xcassets */; };
 		5093C00027E22FF4009903CE /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 5093BFFF27E22FF4009903CE /* Solana */; };
 		5093C00627E23736009903CE /* Metaplex in Frameworks */ = {isa = PBXBuildFile; productRef = 5093C00527E23736009903CE /* Metaplex */; };
+		5096700627E242AE00DEF9EF /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5096700527E242AE00DEF9EF /* Debug.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		5093BFF227E22FCE009903CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5093BFF427E22FCF009903CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5093BFF727E22FCF009903CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5096700527E242AE00DEF9EF /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +57,9 @@
 		5093BFEF27E22FCE009903CE /* RNFTDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5093BFF027E22FCE009903CE /* RNFTDemoApp.swift */,
-				5093BFF227E22FCE009903CE /* ContentView.swift */,
-				5093BFF427E22FCF009903CE /* Assets.xcassets */,
-				5093BFF627E22FCF009903CE /* Preview Content */,
+				5096700827E242E700DEF9EF /* Assets */,
+				5096700727E242CA00DEF9EF /* Classes */,
+				5096700427E242AE00DEF9EF /* Supporting Files */,
 			);
 			path = RNFTDemo;
 			sourceTree = "<group>";
@@ -69,6 +70,32 @@
 				5093BFF727E22FCF009903CE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5096700427E242AE00DEF9EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5096700527E242AE00DEF9EF /* Debug.xcconfig */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5096700727E242CA00DEF9EF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5093BFF027E22FCE009903CE /* RNFTDemoApp.swift */,
+				5093BFF227E22FCE009903CE /* ContentView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5096700827E242E700DEF9EF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5093BFF427E22FCF009903CE /* Assets.xcassets */,
+				5093BFF627E22FCF009903CE /* Preview Content */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +166,7 @@
 			files = (
 				5093BFF827E22FCF009903CE /* Preview Assets.xcassets in Resources */,
 				5093BFF527E22FCF009903CE /* Assets.xcassets in Resources */,
+				5096700627E242AE00DEF9EF /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +312,7 @@
 				DEVELOPMENT_TEAM = V8CHF5249T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RNFTDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -313,6 +342,7 @@
 				DEVELOPMENT_TEAM = V8CHF5249T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RNFTDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
