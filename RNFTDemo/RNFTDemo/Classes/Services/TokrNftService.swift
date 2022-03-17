@@ -63,12 +63,12 @@ class TokrNftService {
         
         return Future { promise in
 
-            self.getTokenWalletsForMyUser()
+            self.getTokenWallets()
                 .mapError({$0 as Error})
                 .eraseToAnyPublisher()
                 .flatMap({ wallets -> AnyPublisher<Wallet, Error> in
                     
-                    Publishers.Sequence(sequence: wallets[0..<5])
+                    Publishers.Sequence(sequence: wallets)
                         .mapError({$0 as Error})
                         .eraseToAnyPublisher()
  
@@ -98,14 +98,15 @@ class TokrNftService {
                 .collect()
                 .sink { completion in
                     
-                    if case let .failure(error) = completion {
-                        print(error)
-                        promise(.success([]))
-                        return
+                    switch completion {
+                        case .failure(_): promise(.success([]))
+                        default: break
                     }
                     
                 } receiveValue: { result in
+                    
                     promise(.success(result))
+                    
                 }
                 .store(in: &self.cancellables)
 
@@ -115,7 +116,7 @@ class TokrNftService {
         
     }
     
-    private func getTokenWalletsForMyUser() -> Future<[Wallet],Error> {
+    private func getTokenWallets() -> Future<[Wallet],Error> {
         
         return Future { promise in
                         
@@ -149,47 +150,24 @@ class TokrNftService {
         
     }
     
-    private func getTokenWallets() -> Future<[Wallet],Error> {
-        
-        return Future { promise in
-                        
-            self.session.solanaClient.action.getTokenWallets(account: "HEPfmxFKcTRTsxoWCatDQeKViDih3XrCD7eVs5t9iums") { result in
-             
-                DispatchQueue.main.async {
-                    
-                    switch result {
-                        case .success(let wallets):
-                            promise(.success(wallets))
-                        case .failure(let error):
-                            promise(.failure(error))
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
     private func getAccountInfo(publicKey: String) -> Future<AccountInfo?,Error> {
         
         return Future { promise in
-            
-            print("Getting account info for public key - \(publicKey)")
-            
+                        
             self.session.solanaClient.api.getAccountInfo(
                 account: publicKey,
                 decodedTo: AccountInfo.self
             ) { result in
+                
                 switch result {
                     case .success(let info):
                         promise(.success(info.data.value))
                         
-                    case .failure(let error):
-                        print(error)
+                    case .failure(_):
                         promise(.success(nil))
+                        
                 }
+                
             }
             
         }
@@ -199,16 +177,12 @@ class TokrNftService {
     private func getMetadata(publicKey: PublicKey) -> Future<Rnft?, TokrNftServiceError> {
         
         return Future { promise in
-            
-            print("Getting plex data for public key - \(publicKey.base58EncodedString)...")
-            
+                        
             let metadata = MetaplexActions.GetMetadata(tokenMint: publicKey)
             
             self.session.solanaClient.action.perform(metadata) { result in
                 switch result {
                     case .success(let token):
-                        
-                        print("Getting metadata for public key - \(token.base58EncodedString)...")
                         
                         self.session.solanaClient.api.getAccountInfo(
                             account: token.base58EncodedString,
@@ -233,7 +207,7 @@ class TokrNftService {
 
                                         do {
                                             
-                                            var rnft = try JSONDecoder().decode(Rnft.self, from: data!)
+                                            let rnft = try JSONDecoder().decode(Rnft.self, from: data!)
                                             promise(.success(rnft))
                                             
                                         } catch {
@@ -242,16 +216,16 @@ class TokrNftService {
                                         
                                     }.resume()
 
-                                case .failure(let error):
-                                    print(error)
+                                case .failure(_):
                                     promise(.success(nil))
                             }
                         }
 
-                    case .failure(let error):
-                        print(error)
+                    case .failure(_):
                         promise(.success(nil))
+                        
                 }
+                
             }
             
         }

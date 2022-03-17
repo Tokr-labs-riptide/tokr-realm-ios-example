@@ -8,4 +8,4 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-"SOLANA_PRIVATE_KEY" = "YOUR_SOLANA_PRIVATE_KEY"
+"OPEN_LOGIN_CLIENT_ID" = "YOUR_OPEN_LOGIN_CLIENT_ID"

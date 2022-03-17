@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SOLANA_PRIVATE_KEY</key>
-	<string>$(SOLANA_PRIVATE_KEY)</string>
+	<key>OPEN_LOGIN_CLIENT_ID</key>
+	<string>$(OPEN_LOGIN_CLIENT_ID)</string>
 </dict>
 </plist>

@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Solana
+import OpenLogin
 
 class ContentViewModel: ObservableObject {
     
@@ -30,34 +31,57 @@ class ContentViewModel: ObservableObject {
     
     func login() {
         
+        guard !isLoggingIn else {
+            return
+        }
+        
         isLoggingIn = true
         
-        guard let privateKey = Bundle.main.object(forInfoDictionaryKey: "SOLANA_PRIVATE_KEY") as? String else {
+        guard let openLoginClientId = Bundle.main.object(forInfoDictionaryKey: "OPEN_LOGIN_CLIENT_ID") as? String else {
             isLoggingIn = false
             shouldShowErrorMessage = true
-            errorMessage = "Solana private key not set in Debug.xcconfig."
+            errorMessage = "OpenLogin ID not set in Debug.xcconfig."
             return
         }
         
-        guard let account = Account(secretKey: Data(Base58.decode(privateKey))) else {
-            isLoggingIn = false
-            shouldShowErrorMessage = true
-            errorMessage = "Could not generate account from private key."
-            return
-        }
-        
-        self.session.solanaClient.auth.save(account)
-            .onFailure { error in
+        OpenLogin(
+            OLInitParams(
+                clientId: openLoginClientId,
+                network: .testnet
+            )
+        )
+            .login(
                 
-                self.isLoggingIn = false
-                self.shouldShowErrorMessage = true
-                self.errorMessage = error.localizedDescription
+                OLLoginParams(
+                    loginProvider: .GITHUB
+                )
                 
-            }.onSuccess { _ in
+            ) { result in
                 
-                self.isLoggingIn = false
-                self.isLoggedIn = true
-                self.getRnfts()
+                switch result {
+                        
+                    case .success(let state):
+                        
+                        let account = Account(secretKey: state.privKey.data(using: .utf8)!)!
+                        
+                        self.session.solanaClient.auth.save(account)
+                            .onFailure { error in
+                                self.isLoggingIn = false
+                                self.shouldShowErrorMessage = true
+                                self.errorMessage = error.localizedDescription
+                            }.onSuccess { _ in
+                                self.isLoggedIn = true
+                                self.isLoggingIn = false
+                                self.getRnfts()
+                            }
+                        
+                    case .failure(let error):
+                        
+                        self.isLoggingIn = false
+                        self.shouldShowErrorMessage = true
+                        self.errorMessage = error.localizedDescription
+                        
+                }
                 
             }
         

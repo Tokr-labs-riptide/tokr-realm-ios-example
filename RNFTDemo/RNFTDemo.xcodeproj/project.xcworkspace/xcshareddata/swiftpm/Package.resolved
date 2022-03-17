@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "OpenLogin",
+        "repositoryURL": "https://github.com/torusresearch/openlogin-swift-sdk",
+        "state": {
+          "branch": null,
+          "revision": "5c2c73ed662b0cfc00fce910cbaacacef2320754",
+          "version": "2.0.0"
+        }
+      },
+      {
         "package": "secp256k1",
         "repositoryURL": "https://github.com/Boilertalk/secp256k1.swift.git",
         "state": {

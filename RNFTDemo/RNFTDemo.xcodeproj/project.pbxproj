@@ -23,6 +23,9 @@
 		5096702127E25D8F00DEF9EF /* RnftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702027E25D8F00DEF9EF /* RnftView.swift */; };
 		5096702527E282FA00DEF9EF /* RnftAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702427E282FA00DEF9EF /* RnftAttribute.swift */; };
 		5096702827E2906200DEF9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702727E28FE800DEF9EF /* AppDelegate.swift */; };
+		5096702B27E297DC00DEF9EF /* OpenLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 5096702A27E297DC00DEF9EF /* OpenLogin */; };
+		5096702F27E2BC4000DEF9EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702E27E2BC4000DEF9EF /* Colors.swift */; };
+		5096703127E2BE0800DEF9EF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096703027E2BE0800DEF9EF /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,8 @@
 		5096702027E25D8F00DEF9EF /* RnftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftView.swift; sourceTree = "<group>"; };
 		5096702427E282FA00DEF9EF /* RnftAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftAttribute.swift; sourceTree = "<group>"; };
 		5096702727E28FE800DEF9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5096702E27E2BC4000DEF9EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5096703027E2BE0800DEF9EF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 			files = (
 				5093C00627E23736009903CE /* Metaplex in Frameworks */,
 				5093C00027E22FF4009903CE /* Solana in Frameworks */,
+				5096702B27E297DC00DEF9EF /* OpenLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +111,7 @@
 				5096702627E28FDE00DEF9EF /* Configuration */,
 				5096701427E247B100DEF9EF /* Models */,
 				5096701527E2482D00DEF9EF /* Services */,
+				5096702D27E2BC3500DEF9EF /* Theme */,
 				5096701327E247AA00DEF9EF /* Views */,
 			);
 			path = Classes;
@@ -181,6 +188,15 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		5096702D27E2BC3500DEF9EF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5096702E27E2BC4000DEF9EF /* Colors.swift */,
+				5096703027E2BE0800DEF9EF /* Fonts.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +216,7 @@
 			packageProductDependencies = (
 				5093BFFF27E22FF4009903CE /* Solana */,
 				5093C00527E23736009903CE /* Metaplex */,
+				5096702A27E297DC00DEF9EF /* OpenLogin */,
 			);
 			productName = RNFTDemo;
 			productReference = 5093BFED27E22FCE009903CE /* RNFTDemo.app */;
@@ -232,6 +249,7 @@
 			packageReferences = (
 				5093BFFE27E22FF4009903CE /* XCRemoteSwiftPackageReference "Solana" */,
 				5093C00427E23736009903CE /* XCRemoteSwiftPackageReference "Metaplex" */,
+				5096702927E297DC00DEF9EF /* XCRemoteSwiftPackageReference "openlogin-swift-sdk" */,
 			);
 			productRefGroup = 5093BFEE27E22FCE009903CE /* Products */;
 			projectDirPath = "";
@@ -261,6 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5096702827E2906200DEF9EF /* AppDelegate.swift in Sources */,
+				5096703127E2BE0800DEF9EF /* Fonts.swift in Sources */,
+				5096702F27E2BC4000DEF9EF /* Colors.swift in Sources */,
 				5096701927E248B700DEF9EF /* Rnft.swift in Sources */,
 				5093BFF327E22FCE009903CE /* ContentView.swift in Sources */,
 				5093BFF127E22FCE009903CE /* RNFTDemoApp.swift in Sources */,
@@ -494,6 +514,14 @@
 				kind = branch;
 			};
 		};
+		5096702927E297DC00DEF9EF /* XCRemoteSwiftPackageReference "openlogin-swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/torusresearch/openlogin-swift-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -506,6 +534,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5093C00427E23736009903CE /* XCRemoteSwiftPackageReference "Metaplex" */;
 			productName = Metaplex;
+		};
+		5096702A27E297DC00DEF9EF /* OpenLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5096702927E297DC00DEF9EF /* XCRemoteSwiftPackageReference "openlogin-swift-sdk" */;
+			productName = OpenLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

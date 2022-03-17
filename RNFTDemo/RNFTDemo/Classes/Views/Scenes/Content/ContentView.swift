@@ -51,7 +51,7 @@ struct ContentView: View {
             
             ProgressView()
                 .progressViewStyle(.circular)
-                .tint(Color("Foreground"))
+                .tint(.foreground)
             
         } else {
             
@@ -59,14 +59,16 @@ struct ContentView: View {
                 viewModel.login()
             } label: {
                 Text("Login")
+                    .frame(width: 150, height: 44)
+                    .cornerRadius(5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(lineWidth: 2)
+                            .foregroundColor(.foreground)
+                    )
             }
-            .frame(width: 150, height: 44)
-            .cornerRadius(5)
-            .overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(Color("Foreground"))
-            )
+            
+            
             
         }
         
@@ -80,7 +82,7 @@ struct ContentView: View {
                 
                 ProgressView()
                     .progressViewStyle(.circular)
-                    .tint(Color("Foreground"))
+                    .tint(.foreground)
                 
             } else {
                 

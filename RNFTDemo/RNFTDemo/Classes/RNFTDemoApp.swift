@@ -19,4 +19,5 @@ struct RNFTDemoApp: App {
             }
         }
     }
+    
 }

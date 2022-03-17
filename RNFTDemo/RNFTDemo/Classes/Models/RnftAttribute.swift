@@ -39,53 +39,53 @@ enum RnftTraitType: String, Codable, CaseIterableDefaultsLast {
         
         switch self {
             case .name:
-                return "name"
+                return "Name"
             case .description:
-                return "description"
+                return "Description"
             case .propertyAddress:
-                return "propertyAddress"
+                return "Property Address"
             case .latLong:
-                return "latLong"
+                return "Coordinates"
             case .acres:
-                return "acres"
+                return "Acres"
             case .titleMethod:
-                return "titleMethod"
+                return "Title Method"
             case .titleHeldBy:
-                return "titleHeldBy"
+                return "Title Held By"
             case .einNumber:
-                return "einNumber"
+                return "EIN Number"
             case .transferRestrictions:
-                return "transferRestrictions"
+                return "Transfer Restrictions"
             case .marketingName:
-                return "marketingName"
+                return "Marketing Name"
             case .type:
-                return "type"
+                return "Type"
             case .sqFt:
-                return "sqFt"
+                return "SQ FT"
             case .propertyLegalDescription:
-                return "propertyLegalDescription"
+                return "Legal Description"
             case .taxParcelNumbers:
-                return "taxParcelNumbers"
+                return "Tax Parcel Numbers"
             case .deed:
-                return "deed"
+                return "Deed"
             case .titleInsurance:
-                return "titleInsurance"
+                return "Title Insurance"
             case .purchaseContract:
-                return "purchaseContract"
+                return "Purchase Contract"
             case .mortgage:
-                return "mortgage"
+                return "Mortgage"
             case .laoArticlesOfOrganizationFromSecretaryOfState:
-                return "laoArticlesOfOrganizationFromSecretaryOfState"
+                return "LAO Articles Of Organization From Secretary Of State"
             case .spvArticlesOfOrganizationFromSecretaryOfState:
-                return "spvArticlesOfOrganizationFromSecretaryOfState"
+                return "SPV Articles Of Organization From Secretary Of State"
             case .spvOperatingAgreement:
-                return "spvOperatingAgreement"
+                return "SPV Operating Agreement"
             case .einLetterFromIrs:
-                return "einLetterFromIrs"
+                return "EIN Letter From IRS"
             case .assignmentOfMembershipInterestsAgreement:
-                return "assignmentOfMembershipInterestsAgreement"
+                return "Assignment Of Membership Interests Agreement"
             case .submittedByAuthorizedRepresentative:
-                return "submittedByAuthorizedRepresentative"
+                return "Submitted By Authorized Representative"
             case .unknown:
                 return ""
         }
