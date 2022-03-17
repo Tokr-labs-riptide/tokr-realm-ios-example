@@ -25,9 +25,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let backButton = UIImage(systemName: "arrow.backward", withConfiguration: backButtonConfiguration)
         
         let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.backgroundColor = UIColor(Color("Background"))
+        navBarAppearance.backgroundColor = UIColor(Color.background)
         navBarAppearance.shadowColor = UIColor(.clear)
         navBarAppearance.setBackIndicatorImage(backButton, transitionMaskImage: backButton)
+        navBarAppearance.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor(Color.foreground),
+            NSAttributedString.Key.font: UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
+        ]
         
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         if #available(iOS 15.0, *) {
@@ -37,6 +41,20 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = UIColor(Color.background)
+        tabBarAppearance.configureWithOpaqueBackground()
+        
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        UITabBar.appearance().standardAppearance.backgroundColor = UIColor(Color.background)
+        
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            UITabBar.appearance().tintColor = UIColor(Color.background)
+        } else {
+            // Fallback on earlier versions
+        }
         
         return true
         

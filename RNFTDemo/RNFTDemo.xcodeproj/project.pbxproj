@@ -17,7 +17,7 @@
 		5096700B27E243B700DEF9EF /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096700A27E243B700DEF9EF /* ContentViewModel.swift */; };
 		5096700E27E245BC00DEF9EF /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096700D27E245BC00DEF9EF /* SessionStore.swift */; };
 		5096700F27E245BC00DEF9EF /* InMemoryAccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096700C27E245BC00DEF9EF /* InMemoryAccountStorage.swift */; };
-		5096701727E2484E00DEF9EF /* TokrNftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701627E2484E00DEF9EF /* TokrNftService.swift */; };
+		5096701727E2484E00DEF9EF /* RnftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701627E2484E00DEF9EF /* RnftService.swift */; };
 		5096701927E248B700DEF9EF /* Rnft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701827E248B700DEF9EF /* Rnft.swift */; };
 		5096701B27E2587500DEF9EF /* CaseIterableDefaultsLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */; };
 		5096702127E25D8F00DEF9EF /* RnftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702027E25D8F00DEF9EF /* RnftView.swift */; };
@@ -26,6 +26,10 @@
 		5096702B27E297DC00DEF9EF /* OpenLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 5096702A27E297DC00DEF9EF /* OpenLogin */; };
 		5096702F27E2BC4000DEF9EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096702E27E2BC4000DEF9EF /* Colors.swift */; };
 		5096703127E2BE0800DEF9EF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096703027E2BE0800DEF9EF /* Fonts.swift */; };
+		5096703427E2D12100DEF9EF /* RnftExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096703327E2D12100DEF9EF /* RnftExampleView.swift */; };
+		5096703627E2D14500DEF9EF /* RnftExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096703527E2D14500DEF9EF /* RnftExampleViewModel.swift */; };
+		5096703A27E2D62600DEF9EF /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096703927E2D48800DEF9EF /* TabsView.swift */; };
+		5096703B27E2D62900DEF9EF /* TabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096703827E2D48800DEF9EF /* TabsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +42,7 @@
 		5096700A27E243B700DEF9EF /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		5096700C27E245BC00DEF9EF /* InMemoryAccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAccountStorage.swift; sourceTree = "<group>"; };
 		5096700D27E245BC00DEF9EF /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
-		5096701627E2484E00DEF9EF /* TokrNftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokrNftService.swift; sourceTree = "<group>"; };
+		5096701627E2484E00DEF9EF /* RnftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftService.swift; sourceTree = "<group>"; };
 		5096701827E248B700DEF9EF /* Rnft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rnft.swift; sourceTree = "<group>"; };
 		5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterableDefaultsLast.swift; sourceTree = "<group>"; };
 		5096702027E25D8F00DEF9EF /* RnftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,10 @@
 		5096702727E28FE800DEF9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5096702E27E2BC4000DEF9EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5096703027E2BE0800DEF9EF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		5096703327E2D12100DEF9EF /* RnftExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftExampleView.swift; sourceTree = "<group>"; };
+		5096703527E2D14500DEF9EF /* RnftExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnftExampleViewModel.swift; sourceTree = "<group>"; };
+		5096703827E2D48800DEF9EF /* TabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewModel.swift; sourceTree = "<group>"; };
+		5096703927E2D48800DEF9EF /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,11 +146,11 @@
 		5096701427E247B100DEF9EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5096700C27E245BC00DEF9EF /* InMemoryAccountStorage.swift */,
-				5096700D27E245BC00DEF9EF /* SessionStore.swift */,
-				5096701827E248B700DEF9EF /* Rnft.swift */,
 				5096701A27E2587500DEF9EF /* CaseIterableDefaultsLast.swift */,
+				5096700C27E245BC00DEF9EF /* InMemoryAccountStorage.swift */,
+				5096701827E248B700DEF9EF /* Rnft.swift */,
 				5096702427E282FA00DEF9EF /* RnftAttribute.swift */,
+				5096700D27E245BC00DEF9EF /* SessionStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,7 +158,7 @@
 		5096701527E2482D00DEF9EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5096701627E2484E00DEF9EF /* TokrNftService.swift */,
+				5096701627E2484E00DEF9EF /* RnftService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -166,7 +174,9 @@
 		5096701D27E25D5900DEF9EF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5096703727E2D3FD00DEF9EF /* Tabs */,
 				5096701E27E25D6A00DEF9EF /* Content */,
+				5096703227E2D10F00DEF9EF /* RnftExample */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -195,6 +205,24 @@
 				5096703027E2BE0800DEF9EF /* Fonts.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		5096703227E2D10F00DEF9EF /* RnftExample */ = {
+			isa = PBXGroup;
+			children = (
+				5096703327E2D12100DEF9EF /* RnftExampleView.swift */,
+				5096703527E2D14500DEF9EF /* RnftExampleViewModel.swift */,
+			);
+			path = RnftExample;
+			sourceTree = "<group>";
+		};
+		5096703727E2D3FD00DEF9EF /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				5096703927E2D48800DEF9EF /* TabsView.swift */,
+				5096703827E2D48800DEF9EF /* TabsViewModel.swift */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,13 +311,17 @@
 				5096702F27E2BC4000DEF9EF /* Colors.swift in Sources */,
 				5096701927E248B700DEF9EF /* Rnft.swift in Sources */,
 				5093BFF327E22FCE009903CE /* ContentView.swift in Sources */,
+				5096703427E2D12100DEF9EF /* RnftExampleView.swift in Sources */,
 				5093BFF127E22FCE009903CE /* RNFTDemoApp.swift in Sources */,
-				5096701727E2484E00DEF9EF /* TokrNftService.swift in Sources */,
+				5096701727E2484E00DEF9EF /* RnftService.swift in Sources */,
 				5096700B27E243B700DEF9EF /* ContentViewModel.swift in Sources */,
 				5096700E27E245BC00DEF9EF /* SessionStore.swift in Sources */,
+				5096703627E2D14500DEF9EF /* RnftExampleViewModel.swift in Sources */,
 				5096702527E282FA00DEF9EF /* RnftAttribute.swift in Sources */,
 				5096701B27E2587500DEF9EF /* CaseIterableDefaultsLast.swift in Sources */,
 				5096700F27E245BC00DEF9EF /* InMemoryAccountStorage.swift in Sources */,
+				5096703B27E2D62900DEF9EF /* TabsViewModel.swift in Sources */,
+				5096703A27E2D62600DEF9EF /* TabsView.swift in Sources */,
 				5096702127E25D8F00DEF9EF /* RnftView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +460,7 @@
 				INFOPLIST_FILE = RNFTDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -458,7 +490,7 @@
 				INFOPLIST_FILE = RNFTDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

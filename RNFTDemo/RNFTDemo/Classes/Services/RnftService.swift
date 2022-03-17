@@ -1,5 +1,5 @@
 //
-//  TokrNftService.swift
+//  RnftService.swift
 //  RNFTDemo
 //
 //  Created by Eric McGary on 3/16/22.
@@ -10,14 +10,14 @@ import Solana
 import Combine
 import Metaplex
 
-enum TokrNftServiceError: Error {
+enum RnftServiceError: Error {
     case invalidUri
     case arweave
     case decodeIssue
     case metadataFailed
 }
 
-class TokrNftService {
+class RnftService {
     
     // ============================================================
     // === Internal API ===========================================
@@ -174,7 +174,7 @@ class TokrNftService {
         
     }
     
-    private func getMetadata(publicKey: PublicKey) -> Future<Rnft?, TokrNftServiceError> {
+    private func getMetadata(publicKey: PublicKey) -> Future<Rnft?, RnftServiceError> {
         
         return Future { promise in
                         

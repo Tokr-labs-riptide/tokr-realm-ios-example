@@ -6,20 +6,18 @@
 //
 
 import SwiftUI
+import Solana
 
 struct ContentView: View {
     
     @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
-            
         
-            content()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(
-                    Color("Background")
-                )
-                .navigationBarTitleDisplayMode(.inline)
+        content()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+            .navigationBarTitleDisplayMode(.inline)
             .alert(
                 viewModel.errorMessage,
                 isPresented: $viewModel.shouldShowErrorMessage
@@ -56,8 +54,11 @@ struct ContentView: View {
         } else {
             
             Button {
+                
                 viewModel.login()
+                
             } label: {
+                
                 Text("Login")
                     .frame(width: 150, height: 44)
                     .cornerRadius(5)
@@ -66,6 +67,7 @@ struct ContentView: View {
                             .stroke(lineWidth: 2)
                             .foregroundColor(.foreground)
                     )
+                
             }
             
             
@@ -102,15 +104,76 @@ struct ContentView: View {
             }
             
         }
+        .navigationTitle(viewModel.solanaPublicKeyShortString)
         .frame(width: UIScreen.main.bounds.width)
         .listStyle(.plain)
+        .toolbar {
+            
+            ToolbarItem(
+                id: "open-solana-explore",
+                placement: .navigationBarTrailing,
+                showsByDefault: true
+            ) {
+                
+                Button {
+                    
+                    UIApplication.shared.open(
+                        URL(string:"https://explorer.solana.com/address/\(viewModel.solanaPublicKeyString)?cluster=devnet")!
+                    )
+                    
+                } label: {
+                    
+                    Image(systemName: "arrow.up.forward.square")
+                        .foregroundColor(.foreground)
+                    
+                }
+
+                
+            }
+            
+        }
         
     }
     
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    static var loggedOutViewModel: ContentViewModel {
+        
+        let model = ContentViewModel()
+        
+        model.isLoggedIn = false
+
+        return model
+        
     }
+    
+    static var loggedInViewModel: ContentViewModel {
+        
+        let model = ContentViewModel()
+        
+        model.isLoggingIn = false
+        model.isLoggedIn = true
+        model.solanaPublicKey = PublicKey(string: "7YQxLnTeE36kGKrnAVzNVDyZ6fcGE5CSascr2j41H8EN")
+        model.rnfts = [Rnft.preview()]
+        
+        return model
+        
+    }
+    
+    static var previews: some View {
+        
+        NavigationView {
+            ContentView(viewModel: loggedInViewModel)
+        }
+        
+        NavigationView {
+            ContentView(viewModel: loggedOutViewModel)
+        }
+        
+    }
+    
 }
+#endif

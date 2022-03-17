@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Solana
 
 struct RnftView: View {
     
     var rnft: Rnft
+    var publicKey: PublicKey?
     
     var body: some View {
         
@@ -45,7 +47,7 @@ struct RnftView: View {
             
             Spacer()
             
-            link()
+            footer()
             
         }
         
@@ -121,7 +123,7 @@ struct RnftView: View {
         
     }
     
-    private func link() -> some View {
+    private func footer() -> some View {
         
         Color.foreground
             .frame(
@@ -131,38 +133,51 @@ struct RnftView: View {
                 maxHeight: 34
             )
             .foregroundColor(.background)
-            .overlay(
-                
-                Button(action: {
-                    
-                    UIApplication.shared.open(URL(string: "https://explorer.solana.com/address/\("")?cluster=devnet")!)
-                    
-                }, label: {
-                    
-                    HStack {
-                        
-                        Text("Open In Solana Explore")
-                            .font(.monosopacedCaption)
-                        
-                        Spacer()
-                        
-                        Image(systemName:"arrow.up.right.square")
-                            .tint(Color("Background"))
-                        
-                    }
-                    .padding(.horizontal)
-                    
-                })
-                    .tint(Color("Background"))
-                
-            )
+            .overlay(link())
+        
+    }
+    
+    @ViewBuilder
+    private func link() -> some View {
+        
+        if publicKey != nil {
+            
+            Button(action: {
+                                
+                UIApplication.shared.open(URL(string: "https://explorer.solana.com/address/\(publicKey!)?cluster=devnet")!)
+                                
+                            }, label: {
+                                
+                                HStack {
+                                    
+                                    Text("Open In Solana Explore")
+                                        .font(.monosopacedCaption)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName:"arrow.up.right.square")
+                                        .tint(Color("Background"))
+                                    
+                                }
+                                .padding(.horizontal)
+                                
+                            })
+                                .tint(Color("Background"))
+            
+        } else {
+            
+            EmptyView()
+            
+        }
         
     }
     
 }
 
+#if DEBUG
 struct RnftView_Previews: PreviewProvider {
     static var previews: some View {
+        
         ScrollView {
             RnftView(rnft: Rnft.preview())
                 .padding()
@@ -171,5 +186,16 @@ struct RnftView_Previews: PreviewProvider {
                     Color("Background")
                 )
         }
+        
+        ScrollView {
+            RnftView(rnft: Rnft.preview(), publicKey: PublicKey(string: "7YQxLnTeE36kGKrnAVzNVDyZ6fcGE5CSascr2j41H8EN"))
+                .padding()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(
+                    Color("Background")
+                )
+        }
+        
     }
 }
+#endif

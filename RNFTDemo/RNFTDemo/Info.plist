@@ -4,5 +4,16 @@
 <dict>
 	<key>OPEN_LOGIN_CLIENT_ID</key>
 	<string>$(OPEN_LOGIN_CLIENT_ID)</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>Background</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

@@ -27,6 +27,16 @@ class ContentViewModel: ObservableObject {
     @Published var solanaResult = ""
     @Published var rnfts = [Rnft]()
     
+    var solanaPublicKeyShortString: String {
+        return solanaPublicKey?.short() ?? ""
+    }
+    
+    var solanaPublicKeyString: String {
+        return solanaPublicKey?.base58EncodedString ?? ""
+    }
+    
+    var solanaPublicKey: PublicKey?
+    
     // MARK: Public Methods
     
     func login() {
@@ -70,6 +80,7 @@ class ContentViewModel: ObservableObject {
                                 self.shouldShowErrorMessage = true
                                 self.errorMessage = error.localizedDescription
                             }.onSuccess { _ in
+                                self.solanaPublicKey = account.publicKey
                                 self.isLoggedIn = true
                                 self.isLoggingIn = false
                                 self.getRnfts()
@@ -103,7 +114,7 @@ class ContentViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private var mintAddresses = [String]()
     private let session = SessionStore.shared
-    private let tokrNftService = TokrNftService()
+    private let tokrNftService = RnftService()
     
     // MARK: Private Methods
     

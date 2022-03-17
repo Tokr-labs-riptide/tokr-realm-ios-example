@@ -14,9 +14,7 @@ struct RNFTDemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
-            }
+            TabsView()
         }
     }
     
