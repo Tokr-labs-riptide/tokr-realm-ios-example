@@ -16,6 +16,6 @@ enum Tab {
 
 class TabsViewModel: ObservableObject {
     
-    @Published var selectedTab: Tab = .content
+    @Published var selectedTab: Tab = .example
     
 }
