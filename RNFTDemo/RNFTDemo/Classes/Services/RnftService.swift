@@ -26,7 +26,7 @@ class RnftService {
     // MARK: Internal Methods
     
     func fetchRnfts() -> Future<[Rnft], Error> {
-  
+        
         return Future { promise in
             self.getRnfts()
                 .sink {
@@ -44,7 +44,30 @@ class RnftService {
                 }
                 .store(in: &self.cancellables)
         }
-       
+        
+        
+    }
+    
+    func fetchRnft(publicKey: PublicKey) -> Future<Rnft?, Error> {
+        
+        return Future { promise in
+            
+            self.getMetadata(publicKey: publicKey)
+                .sink { completion in
+                    
+                    if case let .failure(error) = completion {
+                        promise(.failure(error))
+                        return
+                    }
+                    
+                } receiveValue: { result in
+                    
+                    promise(.success(result))
+                    
+                }
+                .store(in: &self.cancellables)
+            
+        }
         
     }
     
@@ -62,7 +85,7 @@ class RnftService {
     private func getRnfts() -> Future<[Rnft?], Error> {
         
         return Future { promise in
-
+            
             self.getTokenWallets()
                 .mapError({$0 as Error})
                 .eraseToAnyPublisher()
@@ -71,7 +94,7 @@ class RnftService {
                     Publishers.Sequence(sequence: wallets)
                         .mapError({$0 as Error})
                         .eraseToAnyPublisher()
- 
+                    
                 })
                 .flatMap { wallet -> AnyPublisher<AccountInfo?, Error> in
                     
@@ -81,7 +104,7 @@ class RnftService {
                     
                 }
                 .flatMap { accountInfo -> AnyPublisher<Rnft?, Error> in
-    
+                    
                     guard let accountInfo = accountInfo else {
                         
                         return Just(nil)
@@ -109,7 +132,7 @@ class RnftService {
                     
                 }
                 .store(in: &self.cancellables)
-
+            
             
             
         }
@@ -119,12 +142,12 @@ class RnftService {
     private func getTokenWallets() -> Future<[Wallet],Error> {
         
         return Future { promise in
-                        
+            
             self.session.accountStorage.account
                 .onSuccess({ account in
                     
                     self.session.solanaClient.action.getTokenWallets(account: account.publicKey.base58EncodedString) { result in
-                     
+                        
                         DispatchQueue.main.async {
                             
                             switch result {
@@ -143,17 +166,14 @@ class RnftService {
                     promise(.failure(error))
                 }
             
-            
-            
-            
         }
         
     }
     
-    private func getAccountInfo(publicKey: String) -> Future<AccountInfo?,Error> {
+    private func getAccountInfo(publicKey: String) -> Future<AccountInfo?, Error> {
         
         return Future { promise in
-                        
+            
             self.session.solanaClient.api.getAccountInfo(
                 account: publicKey,
                 decodedTo: AccountInfo.self
@@ -177,7 +197,7 @@ class RnftService {
     private func getMetadata(publicKey: PublicKey) -> Future<Rnft?, RnftServiceError> {
         
         return Future { promise in
-                        
+            
             let metadata = MetaplexActions.GetMetadata(tokenMint: publicKey)
             
             self.session.solanaClient.action.perform(metadata) { result in
@@ -204,7 +224,7 @@ class RnftService {
                                             promise(.success(nil))
                                             return
                                         }
-
+                                        
                                         do {
                                             
                                             let rnft = try JSONDecoder().decode(Rnft.self, from: data!)
@@ -215,12 +235,12 @@ class RnftService {
                                         }
                                         
                                     }.resume()
-
+                                    
                                 case .failure(_):
                                     promise(.success(nil))
                             }
                         }
-
+                        
                     case .failure(_):
                         promise(.success(nil))
                         

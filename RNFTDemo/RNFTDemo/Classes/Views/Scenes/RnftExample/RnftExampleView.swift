@@ -25,6 +25,9 @@ struct RnftExampleView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                viewModel.getExampleRnft()
+            }
         
     }
     
@@ -36,29 +39,39 @@ struct RnftExampleView: View {
     
     // MARK: Private Methods
     
-    @ViewBuilder
     private func content() -> some View {
-
-        if viewModel.rnft != nil {
+        
+        VStack {
             
-            ScrollView {
+            if viewModel.rnft != nil, !viewModel.isLoading {
                 
-                RnftView(
-                    rnft: viewModel.rnft!,
-                    publicKey: viewModel.publicKey
-                )
+                ScrollView {
+                    
+                    RnftView(
+                        rnft: viewModel.rnft!,
+                        publicKey: viewModel.publicKey
+                    )
+                        .padding(.top, 24)
+                        .padding(.horizontal)
+                        .padding(.bottom, 32)
+                    
+                }
+                
+                
+            } else {
+                
+                if viewModel.isLoading {
+                    
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .tint(.foreground)
+                    
+                }
                 
             }
             
-            
-        } else {
-            
-            ProgressView()
-                .progressViewStyle(.circular)
-                .tint(.foreground)
-            
         }
-            
+        
     }
     
 }

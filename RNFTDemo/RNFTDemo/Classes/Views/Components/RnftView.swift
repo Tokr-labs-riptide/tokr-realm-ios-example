@@ -143,26 +143,26 @@ struct RnftView: View {
         if publicKey != nil {
             
             Button(action: {
-                                
+                
                 UIApplication.shared.open(URL(string: "https://explorer.solana.com/address/\(publicKey!)?cluster=devnet")!)
-                                
-                            }, label: {
-                                
-                                HStack {
-                                    
-                                    Text("Open In Solana Explore")
-                                        .font(.monosopacedCaption)
-                                    
-                                    Spacer()
-                                    
-                                    Image(systemName:"arrow.up.right.square")
-                                        .tint(Color("Background"))
-                                    
-                                }
-                                .padding(.horizontal)
-                                
-                            })
-                                .tint(Color("Background"))
+                
+            }, label: {
+                
+                HStack {
+                    
+                    Text("Open In Solana Explore")
+                        .font(.monosopacedCaption)
+                    
+                    Spacer()
+                    
+                    Image(systemName:"arrow.up.right.square")
+                        .tint(Color("Background"))
+                    
+                }
+                .padding(.horizontal)
+                
+            })
+                .tint(Color("Background"))
             
         } else {
             
