@@ -33,6 +33,7 @@ enum RnftTraitType: String, Codable, CaseIterableDefaultsLast {
     case einLetterFromIrs = "ein_letter_from_irs"
     case assignmentOfMembershipInterestsAgreement = "assignment_of_membership_interests_agreement"
     case submittedByAuthorizedRepresentative = "submitted_by_authorized_representative"
+    case legal
     case unknown
     
     var display: String {
@@ -86,6 +87,8 @@ enum RnftTraitType: String, Codable, CaseIterableDefaultsLast {
                 return "Assignment Of Membership Interests Agreement"
             case .submittedByAuthorizedRepresentative:
                 return "Submitted By Authorized Representative"
+            case .legal:
+                return "Legal"
             case .unknown:
                 return ""
         }
@@ -144,6 +147,8 @@ enum RnftTraitType: String, Codable, CaseIterableDefaultsLast {
                 return "https://rhove.box.com/s/rw3eg3zen69pslyjlpn4cblpa8q02ymv"
             case .submittedByAuthorizedRepresentative:
                 return "Calvin Cooper"
+            case .legal:
+                return "Fusce convallis enim ipsum, dignissim porttitor ipsum gravida vel. Ut pellentesque nibh in quam elementum porttitor. Curabitur mollis imperdiet purus eget lacinia. Vestibulum eu neque ex. Nunc diam eros, dapibus rhoncus magna vel, fermentum condimentum lacus. Proin congue nisi commodo, scelerisque sapien a, rhoncus erat. Sed consectetur purus vel ligula finibus, et ullamcorper urna rhoncus. Morbi gravida augue id elit faucibus volutpat. Curabitur sit amet metus ut felis malesuada gravida nec eget sapien. Etiam quis diam et dolor dignissim finibus vel sed est. Donec ut varius erat. In nec lectus quis quam vehicula malesuada vitae in metus. Maecenas in nunc ante. Duis quis massa ipsum. Duis elementum nulla vel augue luctus, eget semper felis ullamcorper. Nunc at ex venenatis, euismod libero sed, dapibus tortor."
             case .unknown:
                 return ""
         }
