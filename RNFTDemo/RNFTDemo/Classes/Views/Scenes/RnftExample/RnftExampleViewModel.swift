@@ -22,7 +22,7 @@ class RnftExampleViewModel: ObservableObject {
     @Published var shouldShowErrorMessage = false
     @Published var errorMessage = ""
     
-    let publicKey = PublicKey(string: "5V76YL8BbjHKhSKtfLFezE6V3ybb1ntJExKKorPuxZPB")
+    let publicKey = PublicKey(string: "CBgu3nLmcym2ViLs9s4xUagqCE6uHyyPU9BcDnUvKBhe")
     
     // MARK: Internal Methods
     

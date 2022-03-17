@@ -68,6 +68,7 @@ struct RnftView: View {
                             minHeight: 250,
                             maxHeight: 250
                         )
+                        .clipped()
                 },
                 placeholder: {
                     Color.black
