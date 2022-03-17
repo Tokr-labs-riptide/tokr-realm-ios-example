@@ -25,3 +25,5 @@ Head back over to the directory that you've cloned the project in and navigate t
 <img width="925" alt="debug-xcconfig" src="https://user-images.githubusercontent.com/282512/158829762-666e5a1f-cfd3-48d2-80f0-46460d3b5e3a.png">
 <i>Fig.3 - Replace Open Auth Client ID</i>
 </p>
+
+**IMPORTANT** Make sure that you add the `Debug.xcconfig` file to your project after the previous two steps, otherwise the OpenLogin will fail to instantiate.
