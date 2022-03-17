@@ -1,5 +1,5 @@
 # tokr-realm-ios-example
-A quick example of displaying rNFTs in iOS
+An example of Web3Auth login and displaying of rNFTs in native iOS.
 
 # Setup
 
